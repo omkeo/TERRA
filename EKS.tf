@@ -32,11 +32,6 @@ resource "aws_ecs_service" "hello_world_service" {
   desired_count   = 1
   launch_type     = "FARGATE"
 
-  network_configuration {
-    subnets          = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id]
-    security_groups  = [aws_security_group.ecs_security_group.id]
-    assign_public_ip = true
-  }
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
