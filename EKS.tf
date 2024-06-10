@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_ecs_cluster" "hello_world_cluster" {
-  name = "hello-world-cluster"
+name = "hello-world-cluster"
 }
 
 resource "aws_ecs_task_definition" "hello_world_task" {
@@ -23,15 +23,6 @@ resource "aws_ecs_task_definition" "hello_world_task" {
       hostPort      = 3000
     }]
   }])
-}
-
-resource "aws_ecs_service" "hello_world_service" {
-  name            = "hello-world-service"
-  cluster         = aws_ecs_cluster.hello_world_cluster.id
-  task_definition = aws_ecs_task_definition.hello_world_task.arn
-  desired_count   = 1
-  launch_type     = "FARGATE"
-
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
