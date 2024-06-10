@@ -2,7 +2,7 @@ provider "aws" {
   region = "ap-southeast-2"
 }
 
-resource "aws_ecs_cluster" "hello_world_cluster" {
+resource "aws_ecs_cluster" "hello_world_cluster-01" {
 name = "hello-world-cluster"
 }
 
