@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example_bucket" {
-  bucket = "my-example-bucket" # Replace with your unique bucket name
+  bucket = "loud-specialone" # Replace with your unique bucket name
 
   tags = {
     Environment = "Dev"
